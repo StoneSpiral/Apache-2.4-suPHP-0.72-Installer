@@ -10,6 +10,7 @@ vhost='/usr/local/apache/conf.d/vhosts.conf'
 SOURCE_URL='http://dl-package.bullten.in/cwp/files'
 APACHE_URL='http://mirrors.ukfast.co.uk/sites/ftp.apache.org//httpd/'
 APR_URL='http://mirrors.ukfast.co.uk/sites/ftp.apache.org//apr/'
+SUPHP_URL='http://www.suphp.org/download/'
 packageHTTPD='httpd-2.4.20.tar.gz'
 packageAPR='apr-1.5.2.tar.gz'
 packageAPRUTIL='apr-util-1.5.4.tar.gz'
@@ -119,7 +120,7 @@ echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
-wget -c $SOURCE_URL/$packageSUPHP
+wget -c $SUPHP_URL/$packageSUPHP
 tar zxvf $packageSUPHP
 cd suphp-0.7.2
 yum install autoconf automake libtool -y
