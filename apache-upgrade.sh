@@ -8,7 +8,8 @@ CDIR='/tmp/apache-upgrade'
 apache='/usr/local/apache/conf/httpd.conf'
 vhost='/usr/local/apache/conf.d/vhosts.conf'
 SOURCE_URL='http://dl-package.bullten.in/cwp/files'
-packageHTTPD='httpd-2.4.12.tar.gz'
+APACHE_URL='http://mirrors.ukfast.co.uk/sites/ftp.apache.org//httpd/'
+packageHTTPD='httpd-2.4.20.tar.gz'
 packageAPR='apr-1.5.1.tar.gz'
 packageAPRUTIL='apr-util-1.5.4.tar.gz'
 packageSUPHP='suphp-0.7.2.tar.gz'
@@ -67,7 +68,7 @@ make && make install
 
 echo -e $RED"Apr-Util 1.5.4 installation Completed."$RESET
 echo -e $RED""$RESET
-echo -e $RED"Apache 2.4.12 installation will begin in 5 seconds.."$RESET
+echo -e $RED"Apache 2.4.20 installation will begin in 5 seconds.."$RESET
 sleep 5
 
 clear
@@ -77,7 +78,7 @@ echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
-wget -c $SOURCE_URL/$packageHTTPD
+wget -c $APACHE_URL/$packageHTTPD
 tar zxvf $packageHTTPD
 cd httpd-2.4.12
 rm -rf $apache
