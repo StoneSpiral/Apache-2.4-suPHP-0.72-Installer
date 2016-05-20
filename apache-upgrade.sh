@@ -60,7 +60,7 @@ echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
-wget -c $APR/$packageAPRUTIL
+wget -c $APR_URL/$packageAPRUTIL
 tar zxvf $packageAPRUTIL
 cd apr-util-1.5.4
 ./configure --with-apr=/usr/local/apr/
