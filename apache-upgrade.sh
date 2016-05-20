@@ -9,8 +9,9 @@ apache='/usr/local/apache/conf/httpd.conf'
 vhost='/usr/local/apache/conf.d/vhosts.conf'
 SOURCE_URL='http://dl-package.bullten.in/cwp/files'
 APACHE_URL='http://mirrors.ukfast.co.uk/sites/ftp.apache.org//httpd/'
+APR_URL='http://mirrors.ukfast.co.uk/sites/ftp.apache.org//apr/'
 packageHTTPD='httpd-2.4.20.tar.gz'
-packageAPR='apr-1.5.1.tar.gz'
+packageAPR='apr-1.5.2.tar.gz'
 packageAPRUTIL='apr-util-1.5.4.tar.gz'
 packageSUPHP='suphp-0.7.2.tar.gz'
 RED='\033[01;31m'
@@ -36,18 +37,18 @@ rm -rf $CDIR; mkdir -p $CDIR
 
 clear
 
-echo -e $RED"Installing Apr 1.5.1"$RESET
+echo -e $RED"Installing Apr 1.5.2"$RESET
 echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
-wget -c $SOURCE_URL/$packageAPR
+wget -c $APR_URL/$packageAPR
 tar zxvf $packageAPR
-cd apr-1.5.1
+cd apr-1.5.2
 ./configure
 make && make install
 
-echo -e $RED"Apr 1.5.1 installation Completed."$RESET
+echo -e $RED"Apr 1.5.2 installation Completed."$RESET
 echo -e $RED""$RESET
 echo -e $RED"Apr-Util 1.5.4 installation will begin in 5 seconds.."$RESET
 sleep 5
@@ -59,7 +60,7 @@ echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
-wget -c $SOURCE_URL/$packageAPRUTIL
+wget -c $APR/$packageAPRUTIL
 tar zxvf $packageAPRUTIL
 cd apr-util-1.5.4
 ./configure --with-apr=/usr/local/apr/
