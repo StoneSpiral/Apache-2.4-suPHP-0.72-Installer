@@ -73,14 +73,14 @@ sleep 5
 
 clear
 
-echo -e $RED"Installing Apache 2.4.12 "$RESET
+echo -e $RED"Installing Apache 2.4.20 "$RESET
 echo -e $RED""$RESET
 sleep 2
 
 cd $CDIR
 wget -c $APACHE_URL/$packageHTTPD
 tar zxvf $packageHTTPD
-cd httpd-2.4.12
+cd httpd-2.4.20
 rm -rf $apache
 ./configure --enable-so --prefix=/usr/local/apache --enable-ssl --enable-unique-id --enable-ssl=/usr/include/openssl --enable-rewrite  --enable-deflate --enable-suexec --with-suexec-docroot="/home" --with-suexec-caller="nobody" --with-suexec-logfile="/usr/local/apache/logs/suexec_log" --enable-asis --enable-filter --with-pcre --with-apr=/usr/local/apr --with-mpm=prefork  --with-apr-util=/usr/local/apr --enable-headers --enable-expires --enable-proxy
 make && make install
@@ -106,7 +106,7 @@ exit
 
 fi
 
-echo -e $RED"Apache 2.4.12 installation Completed."$RESET
+echo -e $RED"Apache 2.4.20 installation Completed."$RESET
 echo -e $RED""$RESET
 echo -e $RED"suPHP 0.7.2 installation will begin in 5 seconds.."$RESET
 sleep 5
